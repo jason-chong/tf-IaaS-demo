@@ -3,8 +3,6 @@ resource "azurerm_subnet" "admin-subnet" {
   resource_group_name  = "${azurerm_resource_group.demo-tfiaasd-rg.name}"
   virtual_network_name = "${azurerm_virtual_network.tfiaasd-vnet.name}"
   address_prefix       = "${cidrsubnet(var.vnet2_address, 2, 0)}"
-
-  #service_endpoints    = ["Microsoft.Sql"]
 }
 
 resource "azurerm_network_security_group" "admin_access" {
